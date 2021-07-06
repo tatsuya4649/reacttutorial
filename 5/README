@@ -1,0 +1,43 @@
+
+What is React Router?
+---
+
+React RouterはUIとURLを同期させるライブラリで、ユーザーのアクセスしたURLにしたがって、呼び出すコンポーネントを変更させるのを簡単にするライブラリ。
+
+  ex
+  ----
+  
+  http://example.com/     -> Home Component
+  http://example.com/user -> User Component
+
+  といった感じでURLにしたがってUIをルーティングさせる。
+
+
+React Router
+---
+
+  <Router>
+	  <Layout>
+	      <Route exact path="/" component={Featured}></Route>
+	      <Route path="/archives" component={Archives}></Route>
+	      <Route path="/settings" component={Settings}></Route>
+	  </Layout>
+  </Router>
+
+Routeタグでアクセスしたときに表示されるコンポーネントを指定することができる。
+
+exactキーワードは、厳密にアクセスしたパスと一致したときにのみ表示されるという意味。
+
+例えば、/argchives/...にアクセスしたときにArchiveが表示される。
+
+Link
+---
+
+  return (
+	<div>
+	<h1>KillerNews.net</h1>
+	{this.props.children}
+	<Link to="/archives">archives</Link>,
+	<Link to="/settings">settings</Link>
+	</div>
+  );
