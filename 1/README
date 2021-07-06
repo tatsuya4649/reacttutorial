@@ -1,0 +1,67 @@
+
+React Tutorial
+---
+
+JSX
+---
+
+Wrapp
+----
+
+error:
+return (
+	<h1>Hello</h1>
+	<h2>World</h2>
+);
+ok: JSX element must be Wrapped
+
+JSXはコンポーネントをそのまま2つ並べることはできない。
+上位のコンポーネントでラップしなければならない。
+
+return (
+	<div>
+	<h1>Hello</h1>
+	<h2>World</h2>
+	</div>
+);
+
+Variable
+---
+
+embed var => {var}
+
+render(){
+	let name = "Taro";
+	return (
+		<div>
+		<p>{name}</p>
+		</div>
+	);
+}
+
+数式を埋め込む場合は、{1+2}で埋め込むことができる。
+変数や数式以外にも関数を埋め込むこともできる。
+
+Constructor
+---
+
+if you use Constructor, you can embed member variable.
+
+if not member variable, or not render function variable,output error.
+
+class Layout extends React.Component{
+  constructor(){
+  	super();
+	this.name = "Taro";
+  }
+  render(){
+  	return (
+		{this.name}
+	);
+  }
+}
+
+Keywords
+---
+React,JSX,Webpack,NodeJS,npm
+
