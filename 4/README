@@ -1,3 +1,27 @@
 
 Event
 ---
+
+   ex
+   ----
+
+   changeTitle(title){
+   	this.setState({title});
+   }
+
+   render(){
+   	return (
+		<div>
+			<Header changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
+		</div>
+	);
+   }
+
+   propsでHeaderコンポーネントにbind(this)された状態で渡すことにより、Headerクラス内で渡したクラスのメソッドを呼び出すことができるようになる。
+
+Parent Component -> Child Component:
+	propsを使うことで伝搬することができた。
+Child Component -> Parent Component:
+	propsにbind(parent)した関数を設定することで、Childコンポーネントがpropsの関数を実行したときにParentコンポーネントの関数が起動する。
+
+Warning: setStateを呼び出さないと、再レンダリングされることがないので変更が反映されない。
