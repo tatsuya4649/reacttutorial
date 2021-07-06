@@ -41,3 +41,30 @@ Link
 	<Link to="/settings">settings</Link>
 	</div>
   );
+
+リンクをクリックすることで、RouteコンポーネントがLayoutコンポーネントへ渡されるようになり、Layoutコンポーネントのthis.props.childrenからRouteコンポーネントを参照することができるようになる。
+
+History
+---
+
+デフォルトで履歴が残る。
+
+
+this.props.history.push(); => 履歴が残る
+
+
+this.props.history.replace(); => 履歴が残らない
+
+
+Get URL
+---
+
+URLパラメータの取得方法。
+
+http://localhost:8080/archives/exmple
+
+というURLのarchivesより下の部分がほしい場合は、Routeで:variableを指定することでvariableに格納される。
+
+<Route path="/archives/:article" component={Archives}></Route>
+
+Archivesコンポーネント内でthis.props.match.params.articleを参照することで値を入手できる。
